@@ -1,0 +1,28 @@
+#increment the minimum val in array
+def findSmallestDifference(A, B, m, n):
+    temp = 1000000000;
+    A.sort()
+    B.sort()
+	
+    a=0;
+    b=0;
+    
+    while(a<m and b<n):
+        if(abs(A[a]-B[b] < temp)):
+            temp = abs(A[a]-B[b])
+        if(A[a]<B[b]):
+            a+=1
+        else:
+            b+=1
+    return temp
+    
+
+
+A = [1, 2, 11, 5] 
+
+B = [4, 12, 19, 23, 127, 235] 
+
+m = len(A) 
+n = len(B) 
+  
+print(findSmallestDifference(A, B, m, n)) 
